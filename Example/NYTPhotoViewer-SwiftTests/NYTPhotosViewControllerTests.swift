@@ -45,12 +45,12 @@ class NYTPhotosViewControllerTests: XCTestCase {
     }
     
     func testPageViewControllerDoesNotHaveAssociatedSuperviewBeforeViewLoads() {
-        XCTAssertNil(photosViewController?.pageViewController.view.superview)
+        XCTAssertNil(photosViewController?.pageViewController?.view.superview)
     }
     
     func testPageViewControllerHasAssociatedSuperviewAfterViewLoads() {
         photosViewController?.view = photosViewController?.view // Referencing the view loads it.
-        XCTAssertNotNil(photosViewController?.pageViewController.view.superview)
+        XCTAssertNotNil(photosViewController?.pageViewController?.view.superview)
     }
     
     func testCurrentlyDisplayedPhotoIsFirstAfterConvenienceInitialization() {
