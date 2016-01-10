@@ -243,11 +243,14 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 }
 
 - (void)doneButtonTapped:(id)sender {
+    [self close];
+}
+-(void)close
+{
     self.transitionController.forcesNonInteractiveDismissal = YES;
     [self setOverlayViewHidden:YES animated:NO];
     [self dismissAnimated:YES];
 }
-
 - (void)actionButtonTapped:(id)sender {
     BOOL clientDidHandle = NO;
     
